@@ -50,8 +50,21 @@
       </button>
     </section>
 
+    <!-- HORARIO PARA MÓVILES -->
+    <section class="mobile-schedule" aria-label="Horario móvil">
+      <div class="mobile-day-tabs" role="tablist" aria-label="Seleccionar día">
+        <button class="mobile-day-tab" data-mobile-day="1" role="tab">Lun</button>
+        <button class="mobile-day-tab" data-mobile-day="2" role="tab">Mar</button>
+        <button class="mobile-day-tab" data-mobile-day="3" role="tab">Mié</button>
+        <button class="mobile-day-tab" data-mobile-day="4" role="tab">Jue</button>
+        <button class="mobile-day-tab" data-mobile-day="5" role="tab">Vie</button>
+      </div>
+      <div class="mobile-day-title" id="mobileDayTitle">Horario del lunes</div>
+      <div class="mobile-lessons" id="mobileLessons"></div>
+    </section>
+
     <!-- HORARIO -->
-    <section class="schedule-card">
+    <section class="schedule-card desktop-schedule">
       <div class="schedule-grid">
 
         <!-- CABECERAS -->
@@ -294,6 +307,84 @@
         subject.classList.add('active');
       });
     });
+    // Vista de horario adaptada para móviles
+    const mobileSchedule = {
+      1: { name: 'lunes', lessons: [
+        ['15:00 – 15:55', 'DIW', 'Desarrollo de interfaces web', 'diw'],
+        ['15:55 – 16:50', 'DIW', 'Desarrollo de interfaces web', 'diw'],
+        ['16:50 – 17:45', 'DIW', 'Desarrollo de interfaces web', 'diw'],
+        ['17:45 – 18:05', 'DESCANSO', 'Pausa', 'break'],
+        ['18:05 – 18:55', 'DWEC', 'Desarrollo web entorno cliente', 'dwec'],
+        ['18:55 – 19:45', 'DWEC', 'Desarrollo web entorno cliente', 'dwec'],
+        ['19:45 – 20:35', 'DWEC', 'Desarrollo web entorno cliente', 'dwec']
+      ]},
+      2: { name: 'martes', lessons: [
+        ['15:00 – 15:55', 'DWES', 'Desarrollo web entorno servidor', 'dwes'],
+        ['15:55 – 16:50', 'DWES', 'Desarrollo web entorno servidor', 'dwes'],
+        ['16:50 – 17:45', 'DWES', 'Desarrollo web entorno servidor', 'dwes'],
+        ['17:45 – 18:05', 'DESCANSO', 'Pausa', 'break'],
+        ['18:05 – 18:55', 'OPT', 'Optativa', 'opt'],
+        ['18:55 – 19:45', 'OPT', 'Optativa', 'opt'],
+        ['19:45 – 20:35', 'OPT', 'Optativa', 'opt']
+      ]},
+      3: { name: 'miércoles', lessons: [
+        ['15:00 – 15:55', 'DIW', 'Desarrollo de interfaces web', 'diw'],
+        ['15:55 – 16:50', 'DIW', 'Desarrollo de interfaces web', 'diw'],
+        ['16:50 – 17:45', 'DIW', 'Desarrollo de interfaces web', 'diw'],
+        ['17:45 – 18:05', 'DESCANSO', 'Pausa', 'break'],
+        ['18:05 – 18:55', 'DWEC', 'Desarrollo web entorno cliente', 'dwec'],
+        ['18:55 – 19:45', 'DWEC', 'Desarrollo web entorno cliente', 'dwec'],
+        ['19:45 – 20:35', 'DWEC', 'Desarrollo web entorno cliente', 'dwec']
+      ]},
+      4: { name: 'jueves', lessons: [
+        ['15:00 – 15:55', 'ING', 'Inglés', 'ing'],
+        ['15:55 – 16:50', 'ING', 'Inglés', 'ing'],
+        ['16:50 – 17:45', 'DIG', 'Digitalización', 'dig'],
+        ['17:45 – 18:05', 'DESCANSO', 'Pausa', 'break'],
+        ['18:05 – 18:55', 'DAW', 'Despliegue de aplicaciones web', 'daw'],
+        ['18:55 – 19:45', 'DAW', 'Despliegue de aplicaciones web', 'daw'],
+        ['19:45 – 20:35', 'DAW', 'Despliegue de aplicaciones web', 'daw']
+      ]},
+      5: { name: 'viernes', lessons: [
+        ['15:00 – 15:55', 'IPE 2', 'Itinerario personal para la empleabilidad', 'ipe'],
+        ['15:55 – 16:50', 'IPE 2', 'Itinerario personal para la empleabilidad', 'ipe'],
+        ['16:50 – 17:45', 'SASP', 'Sostenibilidad aplicada al sistema productivo', 'sasp'],
+        ['17:45 – 18:05', 'DESCANSO', 'Pausa', 'break'],
+        ['18:05 – 18:55', 'DWES', 'Desarrollo web entorno servidor', 'dwes'],
+        ['18:55 – 19:45', 'DWES', 'Desarrollo web entorno servidor', 'dwes'],
+        ['19:45 – 20:35', 'DWES', 'Desarrollo web entorno servidor', 'dwes']
+      ]}
+    };
+
+    function renderMobileDay(day) {
+      const data = mobileSchedule[day];
+      const title = document.getElementById('mobileDayTitle');
+      const lessons = document.getElementById('mobileLessons');
+      title.textContent = `Horario del ${data.name}`;
+      lessons.innerHTML = data.lessons.map(([time, code, name, type]) => {
+        if (type === 'break') {
+          return `<div class="mobile-break"><span>☕</span><strong>${code}</strong><small>${name}</small></div>`;
+        }
+        return `<article class="mobile-lesson ${type}">
+          <time>${time}</time>
+          <div><strong>${code}</strong><span>${name}</span></div>
+        </article>`;
+      }).join('');
+
+      document.querySelectorAll('.mobile-day-tab').forEach(tab => {
+        const selected = Number(tab.dataset.mobileDay) === day;
+        tab.classList.toggle('selected', selected);
+        tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+    }
+
+    document.querySelectorAll('.mobile-day-tab').forEach(tab => {
+      tab.addEventListener('click', () => renderMobileDay(Number(tab.dataset.mobileDay)));
+    });
+
+    const initialMobileDay = new Date().getDay();
+    renderMobileDay(initialMobileDay >= 1 && initialMobileDay <= 5 ? initialMobileDay : 1);
+
     // Detectar y resaltar automáticamente el día actual
     function highlightToday() {
       const currentDay = new Date().getDay();
