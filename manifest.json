@@ -1,0 +1,22 @@
+{
+  "name": "Horario 2DAW",
+  "short_name": "2DAW",
+  "description": "Horario semanal de Desarrollo de Aplicaciones Web",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#f49a16",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
