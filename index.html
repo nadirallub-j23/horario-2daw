@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horario semanal · 2DAW</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <main class="page-shell">
+
+    <!-- CABECERA -->
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">HORARIO SEMANAL</span>
+        <h1>2DAW</h1>
+        <p>Desarrollo de Aplicaciones Web</p>
+      </div>
+
+      <div class="hero-decoration" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <!-- TÍTULO Y BOTÓN DE TEMA -->
+    <section class="toolbar">
+      <div>
+        <span class="section-label">
+          <h2>Panel de clase</h2>
+        </span>
+
+      </div>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+        <span class="toggle-icon">☾</span>
+        <span>Modo oscuro</span>
+      </button>
+    </section>
+
+    <!-- HORARIO -->
+    <section class="schedule-card">
+      <div class="schedule-grid">
+
+        <!-- CABECERAS -->
+        <div class="grid-cell corner">HORAS</div>
+        <div class="grid-cell day-header" data-day="1">LUNES</div>
+        <div class="grid-cell day-header" data-day="2">MARTES</div>
+        <div class="grid-cell day-header" data-day="3">MIÉRCOLES</div>
+        <div class="grid-cell day-header" data-day="4">JUEVES</div>
+        <div class="grid-cell day-header" data-day="5">VIERNES</div>
+
+        <!-- 15:00 - 15:55 -->
+        <div class="time-cell">15:00 <span>–</span> 15:55</div>
+        <div class="subject diw">DIW</div>
+        <div class="subject dwes">DWES</div>
+        <div class="subject diw">DIW</div>
+        <div class="subject ing">ING</div>
+        <div class="subject ipe">IPE 2</div>
+
+        <!-- 15:55 - 16:50 -->
+        <div class="time-cell">15:55 <span>–</span> 16:50</div>
+        <div class="subject diw">DIW</div>
+        <div class="subject dwes">DWES</div>
+        <div class="subject diw">DIW</div>
+        <div class="subject ing">ING</div>
+        <div class="subject ipe">IPE 2</div>
+
+        <!-- 16:50 - 17:45 -->
+        <div class="time-cell">16:50 <span>–</span> 17:45</div>
+        <div class="subject diw">DIW</div>
+        <div class="subject dwes">DWES</div>
+        <div class="subject diw">DIW</div>
+        <div class="subject dig">DIG</div>
+        <div class="subject sasp">SASP</div>
+
+        <!-- DESCANSO -->
+        <div class="time-cell break-time">17:45 <span>–</span> 18:05</div>
+
+        <div class="break-row">
+          <span class="break-dot"></span>
+          <strong>DESCANSO</strong>
+          <span class="break-dot"></span>
+        </div>
+
+        <!-- 18:05 - 18:55 -->
+        <div class="time-cell">18:05 <span>–</span> 18:55</div>
+        <div class="subject dwec">DWEC</div>
+        <div class="subject opt">OPT</div>
+        <div class="subject dwec">DWEC</div>
+        <div class="subject daw">DAW</div>
+        <div class="subject dwes">DWES</div>
+
+        <!-- 18:55 - 19:45 -->
+        <div class="time-cell">18:55 <span>–</span> 19:45</div>
+        <div class="subject dwec">DWEC</div>
+        <div class="subject opt">OPT</div>
+        <div class="subject dwec">DWEC</div>
+        <div class="subject daw">DAW</div>
+        <div class="subject dwes">DWES</div>
+
+        <!-- 19:45 - 20:35 -->
+        <div class="time-cell">19:45 <span>–</span> 20:35</div>
+        <div class="subject dwec">DWEC</div>
+        <div class="subject opt">OPT</div>
+        <div class="subject dwec">DWEC</div>
+        <div class="subject daw">DAW</div>
+        <div class="subject dwes">DWES</div>
+
+      </div>
+    </section>
+
+    <!-- REFERENCIA RÁPIDA -->
+    <!-- <section class="legend">
+      <div class="legend-title">
+        <span class="section-label">Asignaturas</span>
+        <h2>Referencia rápida</h2>
+      </div>
+
+      <div class="legend-items">
+        <span><i class="legend-dot diw-dot"></i>DIW</span>
+        <span><i class="legend-dot dwes-dot"></i>DWES</span>
+        <span><i class="legend-dot dwec-dot"></i>DWEC</span>
+        <span><i class="legend-dot daw-dot"></i>DAW</span>
+        <span><i class="legend-dot ing-dot"></i>ING</span>
+        <span><i class="legend-dot ipe-dot"></i>IPE 2</span>
+        <span><i class="legend-dot dig-dot"></i>DIG</span>
+        <span><i class="legend-dot sasp-dot"></i>SASP</span>
+        <span><i class="legend-dot opt-dot"></i>OPT</span>
+      </div>
+    </section>
+    -->
+    <!-- ASIGNATURAS Y PROFESORADO -->
+
+    <section class="subjects-reference">
+
+      <div class="reference-heading">
+        <span class="section-label">Referencias</span>
+        <h2>Asignaturas y profesorado</h2>
+        <p>Consulta rápidamente quién imparte cada módulo.</p>
+      </div>
+
+      <div class="teacher-grid">
+
+        <!-- DAVID HURTADO -->
+        <article class="teacher-card teacher-david">
+          <div class="teacher-top">
+            <span class="teacher-number">01</span>
+            <span class="teacher-tag">Profesor</span>
+          </div>
+
+          <h3>David Hurtado</h3>
+
+          <ul>
+            <li>
+              <strong>DIW</strong>
+              Desarrollo de interfaces web
+            </li>
+
+            <li>
+              <strong>DWEC</strong>
+              Desarrollo web entorno cliente
+            </li>
+
+            <li>
+              <strong>DWES</strong>
+              Desarrollo web entorno servidor
+            </li>
+
+            <li>
+              <strong>OPT</strong>
+              Optativa
+            </li>
+          </ul>
+        </article>
+
+        <!-- HELENA GONZALEZ -->
+        <article class="teacher-card teacher-helena">
+          <div class="teacher-top">
+            <span class="teacher-number">02</span>
+            <span class="teacher-tag">Profesora</span>
+          </div>
+
+          <h3>Helena Gonzalez</h3>
+
+          <ul>
+            <li>
+              <strong>ING</strong>
+              Inglés
+            </li>
+          </ul>
+        </article>
+
+        <!-- ANIBAL MARTIN -->
+        <article class="teacher-card teacher-anibal">
+          <div class="teacher-top">
+            <span class="teacher-number">03</span>
+            <span class="teacher-tag">Profesor</span>
+          </div>
+
+          <h3>Anibal Martin</h3>
+
+          <ul>
+            <li>
+              <strong>DIG</strong>
+              Digitalización
+            </li>
+
+            <li>
+              <strong>DAW</strong>
+              Despliegue de aplicaciones web
+            </li>
+          </ul>
+        </article>
+
+        <!-- YOLANDA PEINADO -->
+        <article class="teacher-card teacher-yolanda">
+          <div class="teacher-top">
+            <span class="teacher-number">04</span>
+            <span class="teacher-tag">Profesora</span>
+          </div>
+
+          <h3>Yolanda Peinado</h3>
+
+          <ul>
+            <li>
+              <strong>IPE 2</strong>
+              Itinerario personal para la empleabilidad
+            </li>
+
+            <li>
+              <strong>SASP</strong>
+              Sostenibilidad aplicada al sistema productivo
+            </li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <span>2DAW · Horario académico</span>
+      <span>Hecho para estudiar mejor ✦</span>
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('horario-theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      toggle.querySelector('.toggle-icon').textContent = '☀';
+      toggle.querySelector('span:last-child').textContent = 'Modo claro';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark');
+
+      localStorage.setItem(
+        'horario-theme',
+        isDark ? 'dark' : 'light'
+      );
+
+      toggle.querySelector('.toggle-icon').textContent =
+        isDark ? '☀' : '☾';
+
+      toggle.querySelector('span:last-child').textContent =
+        isDark ? 'Modo claro' : 'Modo oscuro';
+    });
+
+    // Efecto al seleccionar una asignatura
+    document.querySelectorAll('.subject').forEach(subject => {
+      subject.addEventListener('click', () => {
+        document
+          .querySelectorAll('.subject.active')
+          .forEach(item => item.classList.remove('active'));
+
+        subject.classList.add('active');
+      });
+    });
+    // Detectar y resaltar automáticamente el día actual
+    function highlightToday() {
+      const currentDay = new Date().getDay();
+
+      // Limpiar posibles resaltados anteriores
+      document.querySelectorAll('.day-header').forEach(header => {
+        header.classList.remove('today');
+      });
+
+      document.querySelectorAll('.subject').forEach(subject => {
+        subject.classList.remove('today-column');
+      });
+
+      // Si es sábado o domingo, no se resalta ningún día
+      if (currentDay === 0 || currentDay === 6) {
+        return;
+      }
+
+      // Buscar la cabecera correspondiente
+      const todayHeader = document.querySelector(
+        `.day-header[data-day="${currentDay}"]`
+      );
+
+      if (!todayHeader) return;
+
+      todayHeader.classList.add('today');
+
+      /*
+        Cada fila tiene:
+        - 1 celda de hora
+        - 5 asignaturas, una por día
+    
+        Como ahora existe la esquina HORAS, la cuadrícula
+        queda correctamente alineada.
+      */
+
+      const rows = document.querySelectorAll('.schedule-grid');
+
+      // Obtener todas las asignaturas en orden
+      const subjects = document.querySelectorAll('.subject');
+
+      // El día 1 corresponde a la primera asignatura de cada fila,
+      // el día 2 a la segunda, etc.
+      const dayIndex = currentDay - 1;
+
+      // Hay 3 filas antes del descanso y 3 después
+      const rowsBeforeBreak = 3;
+      const rowsAfterBreak = 3;
+
+      for (let row = 0; row < rowsBeforeBreak; row++) {
+        const index = row * 5 + dayIndex;
+        if (subjects[index]) {
+          subjects[index].classList.add('today-column');
+        }
+      }
+
+      // Después del descanso, las asignaturas empiezan en el índice 15
+      const afterBreakStart = 15;
+
+      for (let row = 0; row < rowsAfterBreak; row++) {
+        const index = afterBreakStart + row * 5 + dayIndex;
+        if (subjects[index]) {
+          subjects[index].classList.add('today-column');
+        }
+      }
+    }
+
+    highlightToday();
+  </script>
+
+</body>
+
+</html>
